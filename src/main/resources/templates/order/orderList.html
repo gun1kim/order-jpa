@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 리스트 </title>
+</head>
+<body>
+<h2>Order List</h2>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>고객명</th>
+            <th>주문ID</th>
+            <th>상품명</th>
+            <th>총구매금액</th>
+            <th>총주문수량</th>
+            <th>주문상태</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.getUser().getName()}">
+                고객명
+            </td>
+            <td>
+                <a th:href="@{/order/info/{orderId}(orderId=${order.orderId})}" th:text="${order.orderId}"></a>
+            </td>
+            <td th:text="${order.orderDate}">
+                주문일자
+            </td>
+            <td th:text="${order.totalPrice}">
+                총주문금액
+            </td>
+            <td th:text="${order.totalQuantity}">
+                총주문수량
+            </td>
+            <td th:text="${order.status}">
+                주문상태
+            </td>
+
+
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
