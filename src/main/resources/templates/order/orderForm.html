@@ -10,10 +10,9 @@
 <form th:action action="/order/add" method="post">
     <div>
         <label for="user">고객</label>
-        <select id="user" name="userId">
-            <option value="">선택하세요</option>
-            <option th:each="user : ${users}" th:value="${user.userId}" th:text="${user.name}">고객명</option>
-        </select>
+        <input type="text" name="user" id="user" th:value="${user.name}" readonly>
+        <input type="text" name="userId" th:value="${user.userId}" hidden>
+
     </div>
     <div>
         <label for="product">상품</label>

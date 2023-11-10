@@ -5,6 +5,7 @@ import com.example.order_jpa.entity.Product;
 import com.example.order_jpa.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class ProductController {
     }
 
     @PostMapping("/update/{productId}")
-    public String updateProduct(@ModelAttribute ProductUpdateDto productUpdateDto) {
+    public String updateProduct(@Validated @ModelAttribute ProductUpdateDto productUpdateDto) {
         productService.update(productUpdateDto);
         return "redirect:/product/list";
     }

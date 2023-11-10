@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>홈</title>
+</head>
+<body>
+<h2>This is Home</h2>
+<hr>
+<div>
+    <a th:href="@{/order/add}">주문 등록</a>
+    <a th:href="@{/order/list}">주문 목록</a>
+    <a th:href="@{/product/list}">상품 조회</a>
+    <a th:href="@{/product/add}">상품 구매</a>
+</div>
+</body>
+</html>

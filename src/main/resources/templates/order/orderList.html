@@ -38,6 +38,9 @@
             <td th:text="${order.status}">
                 주문상태
             </td>
+            <td>
+                <a th:if="${order.status.name() == 'CREATED'}" th:href="@{/order/cancel/{orderId}(orderId=${order.orderId})}">주문취소</a>
+            </td>
 
 
         </tr>
